@@ -1,0 +1,32 @@
+/*隐藏滚动条*/
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+/*设置背景颜色*/
+page{
+  background-color: white;
+}
+
+.index-img{
+  height:400rpx;
+  width:100%;
+  overflow:hidden;
+  border-radius: 30rpx;
+  margin:10rpx;
+}
+
+.title{
+  font-size: 16px;
+  font-family: 黑体;
+  font-weight: 700;
+  margin:10rpx 0rpx 10rpx 0rpx;
+}
+
+.second_title{
+  font-size: 14px;
+  color: #949494;
+}

@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="details_margin">
+    <view class="title">{{title}}</view>
+    <view class="" style="margin:30rpx 0rpx 30rpx 0rpx;font-size: 11px;color: #949494;">
+      更新时间：2018-10-10
+    </view>
+    <view wx:for="{{data}}" wx:key="index">
+      <image class="" src="{{item.img}}" mode="widthFix" style="width:100%" lazy-load="true" />
+    </view>
+  </view>
+</view>
+<!-- 分享按钮，用图标形式展示 -->
+<view class="filter-menu">
+  <button class="weui-btn" open-type='share' plain='true' style="padding:0;border:none;width:30px;heigth:20px;">
+    <image style="width:30px;heigth:20px;" src='https://test-1255594100.cos.ap-guangzhou.myqcloud.com/second_hand_mall/%E5%88%86%E4%BA%AB%20(2)%E5%89%AF%E6%9C%AC.png' mode='widthFix'></image>
+  </button>
+</view>

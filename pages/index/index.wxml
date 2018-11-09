@@ -1,0 +1,18 @@
+<view class="container">
+  <scroll-view bindscrolltolower="bindDownLoad" class="weui-panel weui-panel_access" scroll-y="true" style="height: {{scrollHeight}}px; width: 750rpx;">
+    <view class="index_bottom">
+      <view class="list b-f" bindtap="details" open-type="navigate"  wx:for="{{data}}" wx:key="index"  data-title="{{item.title}}" data-id="{{item.id}}" >
+        <view style="margin-bottom:50rpx;">
+          <view style="width:100%;height:700rpx;overflow:hidden;border-radius: 30rpx; ">
+            <image class="" src="{{item.headImg}}" mode="widthFix" style="width: 100%;" lazy-load="true" />
+          </view>
+          <view class="title">{{item.title}}</view>
+          <view class="second_title">
+            <image style="width:40rpx;height:40rpx;" src="https://test-1255594100.cos.ap-guangzhou.myqcloud.com/second_hand_mall/162.png" />
+            {{item.thumbsUp}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

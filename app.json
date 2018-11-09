@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/details/index",
+    "pages/user/index",
+    "pages/user/help",
+    "pages/login/login"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#eeeeee",
+    "navigationBarTitleText": "123",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#fd4a5f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-active.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user-active.png"
+      }
+    ],
+    "position": "bottom"
+  },
+  "debug": false
+}

@@ -1,0 +1,8 @@
+<view class="container m-b5">
+  <view class="user-header p-r">
+    <view class="user-bg-box">
+      <!-- <image class="header-bg" src="{{userInfo.avatarUrl}}"></image> -->
+      <!-- <open-data class="header-bg" type="userAvatarUrl"></open-data> -->
+    </view>
+  </view>
+</view>
