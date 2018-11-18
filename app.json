@@ -7,9 +7,9 @@
     "pages/login/login"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#eeeeee",
-    "navigationBarTitleText": "123",
-    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#fb574b",
+    "navigationBarTitleText": "美图吧",
+    "navigationBarTextStyle": "light",
     "backgroundTextStyle": "dark"
   },
   "tabBar": {

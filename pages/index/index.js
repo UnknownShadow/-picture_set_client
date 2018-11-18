@@ -29,6 +29,10 @@ Page({
     // 获取首页数据
     _this.getIndexData();
   },
+
+  onShow:function(){
+    this.getIndexData();
+  },
   
 
   /**
@@ -52,7 +56,7 @@ Page({
 
     App._post_form('index', {
       page: page || 0,
-      limit: 2,
+      limit: 10,
     }, function (result) {
      
       //第一次加载 moment_list.data 是undefined；
@@ -88,7 +92,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: "小程序首页",
+      title: "等你来撩~~~",
       desc: "",
       path: "/pages/index/index"
     };

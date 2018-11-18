@@ -36,7 +36,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: "小程序首页",
+      title: "等你来撩~~~",
       desc: "",
       path: "/pages/index/index"
     };
