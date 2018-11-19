@@ -5,9 +5,20 @@ Page({
     no_more: false,
     scrollHeight: null,
     page: 0,
-
+    flag: 0,   //判断是否为首次进入，0：首次进入
   },
 
+  //用户首次打开小程序，触发 onLaunch（全局只触发一次）。
+  onLaunch: function(){
+  
+    console.log("触发launch");
+  },
+  setTimes:function(){
+    App._post_form('setTimes', {
+      id: wx.getStorageSync('user_id')
+    }, function (result) {
+    })
+  },
 
   onLoad: function () {
 
@@ -15,6 +26,9 @@ Page({
 
     let user_id = wx.getStorageSync('user_id');
     console.log("用户登录后的user_id：", user_id);
+  
+    //统计用户进入小程序的次数
+    _this.setTimes();
 
     if (user_id == "") {
       //跳转到登录页面
@@ -30,10 +44,10 @@ Page({
     _this.getIndexData();
   },
 
-  onShow:function(){
+  onShow: function () {
     this.getIndexData();
   },
-  
+
 
   /**
    * 获取首页数据
@@ -58,14 +72,19 @@ Page({
       page: page || 0,
       limit: 10,
     }, function (result) {
-     
+
       //第一次加载 moment_list.data 是undefined；
       //第一次加载后的每一次加载都将result.data数组添加到moment_list.data数组的后面
       //然后赋值给result.data
       if (typeof moment_list.data != 'undefined') {
         result.data = moment_list.data.concat(result.data);
+        //因为有onload 会加载两次，所以，在第一次加载时将数据清空，避免首次进入有重复数据
+        if (_this.data.flag == 0) {
+          result.data = [];
+        }
       }
 
+      _this.setData({ flag: 1 });
       _this.setData(result);
       // 隐藏加载框
       // wx.hideLoading();
@@ -80,7 +99,7 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         _this.setData({
-          scrollHeight: res.windowHeight+10,
+          scrollHeight: res.windowHeight + 10,
         });
       }
     });

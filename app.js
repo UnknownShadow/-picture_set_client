@@ -36,7 +36,7 @@ App({
    * 设置api地址
    */
   setApiRoot: function () {
-    this.api_root = this.siteInfo.siteroot + '/store/api/';
+    this.api_root = this.siteInfo.siteroot + '/small/api/';
   },
 
   /**
