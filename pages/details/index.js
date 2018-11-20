@@ -5,6 +5,7 @@ Page({
     title: '',
     id: 0,
     details: {},
+    imgList: [],
   },
 
   onLoad: function (option) {
@@ -27,6 +28,15 @@ Page({
     App._get('details', {
       id: _this.data.id,
     }, function (result) {
+
+      //将图片放入imgList中，预览需要
+      var imgList = new Array();
+      if (result.code == 0) {
+        for (var i = 0; i < result.data.length; i++) {
+          imgList.push(result.data[i].img);
+        }
+      }
+      _this.setData({ imgList: imgList });
       _this.setData(result);
     });
   },
@@ -39,8 +49,8 @@ Page({
     var _this = this;
     // 设置菜单中的转发按钮触发转发事件时的转发内容
     var shareObj = {
-      title: "转发的标题", // 默认是小程序的名称(可以写slogan等)
-      path: '/pages/share/share', // 默认是当前页面，必须是以‘/’开头的完整路径
+      title: "等你来撩~~~", // 默认是小程序的名称(可以写slogan等)
+      path: '/pages/index/index', // 默认是当前页面，必须是以‘/’开头的完整路径
       imgUrl: '', //自定义图片路径，可以是本地文件路径、代码包文件路径或者网络图片路径，支持PNG及JPG，不传入 imageUrl 则使用默认截图。显示图片长宽比是 5:4
       success: function (res) {
         // 转发成功之后的回调
@@ -87,6 +97,23 @@ Page({
       // _this.setData(result);
     });
   },
+
+  previewImage: function (e) {
+    var current = e.target.dataset.src,
+      picturesId = e.target.dataset.id;
+
+      //记录当前用户点击的预览图片
+    App._post_form('setPreview', {
+      id: wx.getStorageSync('user_id'),
+      picturesId: picturesId,
+    }, function (result) {
+    });
+
+    wx.previewImage({
+      current: current, // 当前显示图片的http链接  
+      urls: this.data.imgList // 需要预览的图片http链接列表  
+    })
+  }
 
 
   // onShareAppMessage: function () {
