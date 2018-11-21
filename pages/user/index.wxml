@@ -1,8 +1,44 @@
-<view class="container m-b5">
+<view class="container m-b5"  >
   <view class="user-header p-r">
     <view class="user-bg-box">
-      <!-- <image class="header-bg" src="{{userInfo.avatarUrl}}"></image> -->
-      <!-- <open-data class="header-bg" type="userAvatarUrl"></open-data> -->
+      <open-data class="header-bg" type="userAvatarUrl"></open-data>
     </view>
+  </view>
+    <view class="user-order">
+      <view class="user-order-cont dis-flex" >
+        <view class="p-r" style=" flex:1.4;">
+          <view class="header-img-box">
+            <open-data type="userAvatarUrl"></open-data>
+          </view>
+        </view>
+      </view>
+    </view>
+  <view class="m-top20">
+    <navigator url="../user/help">
+      <view class="user-order-title dis-flex b-f">
+        <view class="flex-box">
+          <text class="iconfont icon-help common-icon"></text>
+          <text class="user-orderName h4">常见问题</text>
+        </view>
+        <view class="flex-box">
+          <view class="user-orderContBox">
+            <text class="iconfont icon-xiangyoujiantou user-orderJtou"></text>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url="../user/help">
+      <view class="user-order-title dis-flex b-f">
+        <view class="flex-box">
+          <text class="iconfont icon-help common-icon"></text>
+          <text class="user-orderName h4">我的收藏</text>
+        </view>
+        <view class="flex-box">
+          <view class="user-orderContBox">
+            <text class="iconfont icon-xiangyoujiantou user-orderJtou"></text>
+          </view>
+        </view>
+      </view>
+    </navigator>
   </view>
 </view>
