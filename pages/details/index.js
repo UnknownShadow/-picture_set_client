@@ -4,6 +4,7 @@ Page({
   data: {
     title: '',
     id: 0,
+    date: '',
     details: {},
     imgList: [],
   },
@@ -13,6 +14,7 @@ Page({
     _this.setData({
       title: option.title,
       id: option.id,
+      date: option.date,
     });
     _this.getIndexData();
   },
@@ -102,7 +104,7 @@ Page({
     var current = e.target.dataset.src,
       picturesId = e.target.dataset.id;
 
-      //记录当前用户点击的预览图片
+    //记录当前用户点击的预览图片
     App._post_form('setPreview', {
       id: wx.getStorageSync('user_id'),
       picturesId: picturesId,

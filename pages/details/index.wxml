@@ -2,7 +2,7 @@
   <view class="details_margin">
     <view class="title">{{title}}</view>
     <view class="" style="margin:30rpx 0rpx 30rpx 0rpx;font-size: 11px;color: #949494;">
-      更新时间：2018-10-10
+      更新时间：{{date}}
     </view>
     <view wx:for="{{data}}" wx:key="index">
       <image class="" src="{{item.img}}" bindtap="previewImage" data-src="{{item.img}}" data-id="{{item.id}}" mode="widthFix" style="width:100%" lazy-load="true" />
